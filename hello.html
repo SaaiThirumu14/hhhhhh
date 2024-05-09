@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML</title>
+    <title>Import HTML Data</title>
+    <script>
+        function importHTMLData() {
+            var fileInput = document.getElementById('htmlFileInput');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                var htmlContent = event.target.result;
+                google.script.run.importHTMLData(htmlContent);
+            };
+
+            reader.readAsText(file);
+        }
+    </script>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Age</th>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>john@example.com</td>
-            <td>30</td>
-        </tr>
-        <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
-            <td>25</td>
-        </tr>
-    </table>
+    <input type="file" id="htmlFileInput">
+    <button onclick="importHTMLData()">Import HTML Data</button>
 </body>
 </html>
