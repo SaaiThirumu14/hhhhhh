@@ -31,7 +31,7 @@
             });
 
             // Send data to Google Apps Script
-            fetch('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL', {
+            fetch('https://script.google.com/macros/s/AKfycbxb0vErFRJN8NOcMzGMKMw_HilNS4ceNu_RWw70xZPLBu9Psp_jc5qn5RbFIUWsWsBH/exec', {
                 method: 'POST',
                 body: JSON.stringify(jsonData)
             }).then(response => {
